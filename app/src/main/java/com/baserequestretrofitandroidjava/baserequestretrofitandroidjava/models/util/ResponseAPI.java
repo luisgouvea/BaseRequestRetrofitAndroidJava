@@ -6,8 +6,8 @@ public class ResponseAPI<T> {
     public String error;
     public String errorCode;
 
-    public static final String errorBase = "Erro génerico do aplicativo";
-    public static final String codeBase = "4444444";
+    public static final String errorBase = "Não foi possível comunicar-se com o servidor";
+    public static final String codeBase = "404";
 
     public ResponseAPI() {
         this.setError(ResponseAPI.errorBase);
