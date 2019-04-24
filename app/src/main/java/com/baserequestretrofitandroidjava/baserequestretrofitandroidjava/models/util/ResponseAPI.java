@@ -6,6 +6,16 @@ public class ResponseAPI<T> {
     public String error;
     public String errorCode;
 
+    public static final String errorBase = "Erro génerico do aplicativo";
+    public static final String codeBase = "4444444";
+
+    public ResponseAPI() {
+        this.setError(ResponseAPI.errorBase);
+        this.setErrorCode(ResponseAPI.codeBase);
+        this.setHasError(true);
+        this.setResponseDetail(null);
+    }
+
     public void setResponseDetail(T responseDetail) {
         this.responseDetail = responseDetail;
     }

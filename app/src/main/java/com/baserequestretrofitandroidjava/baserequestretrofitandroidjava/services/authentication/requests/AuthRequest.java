@@ -32,19 +32,14 @@ public class AuthRequest extends RequestBase implements RequestBaseInterface {
     }
 
     @Override
-    public void requestPostExecute(Call<ResponseAPI> call, Response<ResponseAPI> response, Throwable t) {
-        if (response == null) {
-            authCallbackReceive.requestAuthFailed(null);
-        } else if (response.code() == 200) {
-            ResponseAPI responseAPI = LibraryUtil.parseResponseAPI(response);
-            if (LibraryUtil.hasErrorResponseAPI(responseAPI) == false) {
-                AuthenticationRequest authenticationRequest = LibraryUtil.parseResponseAPIToObject(responseAPI, AuthenticationRequest.class);
-                authCallbackReceive.requestAuthSuccess(authenticationRequest);
-            } else {
-                authCallbackReceive.requestAuthFailed(responseAPI);
-            }
+    public void requestPostExecute(Call<ResponseAPI> call, Response<ResponseAPI> responseRetrofit, Throwable t) {
+        Object object = LibraryUtil.parseResponseAPI(responseRetrofit, AuthenticationRequest.class); // Response API ou AuthenticationRequest
+        if (LibraryUtil.checkTypeResponseAPI(object)) {
+            AuthenticationRequest auth = LibraryUtil.parseObjectToOtherObject(object, AuthenticationRequest.class);
+            authCallbackReceive.requestAuthSuccess(auth);
         } else {
-
+            ResponseAPI responseAPI = LibraryUtil.parseObjectToOtherObject(object, ResponseAPI.class);
+            authCallbackReceive.requestAuthFailed(responseAPI);
         }
     }
 }
