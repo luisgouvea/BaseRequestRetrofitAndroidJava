@@ -21,10 +21,8 @@ public class MainActivity extends AppCompatActivity implements AuthCallback {
     }
 
     public void requestListUser() {
-        AuthenticationRequest authenticationRequest = new AuthenticationRequest();
-        authenticationRequest.Password = "fff";
         AuthRequest authRequest = new AuthRequest(authCallback);
-        authRequest.authRequest(authenticationRequest);
+        authRequest.authRequest("123456");
     }
 
 

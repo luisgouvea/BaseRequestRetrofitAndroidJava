@@ -19,9 +19,14 @@ public class AuthRequest extends RequestBase implements RequestBaseInterface {
         this.authCallbackReceive = authCallback;
     }
 
-    public void authRequest(AuthenticationRequest authenticationRequest) {
-        this.authenticationRequest = authenticationRequest;
+    public void authRequest(String password) {
+        createObject(password);
         this.requestDoInBackground();
+    }
+
+    public void createObject(String password) {
+        authenticationRequest = new AuthenticationRequest();
+        authenticationRequest.Password = password;
     }
 
     @Override
