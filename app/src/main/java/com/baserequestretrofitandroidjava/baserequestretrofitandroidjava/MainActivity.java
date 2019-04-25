@@ -3,15 +3,16 @@ package com.baserequestretrofitandroidjava.baserequestretrofitandroidjava;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
+import com.baserequestretrofitandroidjava.baserequestretrofitandroidjava.manager.ManagerRequest;
 import com.baserequestretrofitandroidjava.baserequestretrofitandroidjava.models.AuthenticationRequest;
 import com.baserequestretrofitandroidjava.baserequestretrofitandroidjava.models.util.ResponseAPI;
 import com.baserequestretrofitandroidjava.baserequestretrofitandroidjava.services.authentication.AuthCallback;
-import com.baserequestretrofitandroidjava.baserequestretrofitandroidjava.services.authentication.AuthRequest;
 
 public class MainActivity extends AppCompatActivity implements AuthCallback {
 
     /* == CALLBACKS == */
     AuthCallback authCallback = this;
+    ManagerRequest managerRequest;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -21,8 +22,8 @@ public class MainActivity extends AppCompatActivity implements AuthCallback {
     }
 
     public void requestListUser() {
-        AuthRequest authRequest = new AuthRequest(authCallback);
-        authRequest.authRequest("123456");
+        managerRequest = new ManagerRequest();
+        managerRequest.authRequest(authCallback, "fdsf","343434");
     }
 
 

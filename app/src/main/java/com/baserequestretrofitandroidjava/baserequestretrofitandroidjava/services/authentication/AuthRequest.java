@@ -5,8 +5,6 @@ import com.baserequestretrofitandroidjava.baserequestretrofitandroidjava.models.
 import com.baserequestretrofitandroidjava.baserequestretrofitandroidjava.retrofit.RequestBaseInterface;
 import com.baserequestretrofitandroidjava.baserequestretrofitandroidjava.retrofit.RequestBase;
 import com.baserequestretrofitandroidjava.baserequestretrofitandroidjava.retrofit.InitialRetrofit;
-import com.baserequestretrofitandroidjava.baserequestretrofitandroidjava.services.authentication.AuthCallback;
-import com.baserequestretrofitandroidjava.baserequestretrofitandroidjava.services.authentication.AuthMethodsInterface;
 import com.baserequestretrofitandroidjava.baserequestretrofitandroidjava.util.LibraryUtil;
 
 import retrofit2.Call;
@@ -20,14 +18,15 @@ public class AuthRequest extends RequestBase implements RequestBaseInterface {
         this.authCallbackReceive = authCallback;
     }
 
-    public void authRequest(String password) {
-        createObject(password);
+    public void authRequest(String password, String email) {
+        createObject(password, email);
         this.requestDoInBackground();
     }
 
-    public void createObject(String password) {
+    private void createObject(String password, String email) {
         authenticationRequest = new AuthenticationRequest();
         authenticationRequest.Password = password;
+        authenticationRequest.Email = email;
     }
 
     @Override
