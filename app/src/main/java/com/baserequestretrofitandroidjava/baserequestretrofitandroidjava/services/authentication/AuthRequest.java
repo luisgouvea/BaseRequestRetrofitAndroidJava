@@ -25,8 +25,13 @@ public class AuthRequest extends RequestBase implements RequestBaseInterface {
 
     private void createObject(String password, String email) {
         authenticationRequest = new AuthenticationRequest();
-        authenticationRequest.Password = password;
-        authenticationRequest.Email = email;
+        if (LibraryUtil.stringIsNull(password)) {
+            authenticationRequest.Password = password;
+        }
+
+        if (LibraryUtil.stringIsNull(email)) {
+            authenticationRequest.Email = email;
+        }
     }
 
     @Override

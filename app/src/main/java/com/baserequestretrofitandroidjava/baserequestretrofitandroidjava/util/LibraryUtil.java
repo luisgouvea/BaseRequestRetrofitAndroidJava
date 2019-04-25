@@ -54,4 +54,16 @@ public class LibraryUtil {
             return true;
         }
     }
+
+    public static boolean stringIsNull(String stringTarget) {
+        if (stringTarget == null) {
+            return true;
+        }
+        stringTarget = stringTarget.trim();
+        if (stringTarget.equals("") || stringTarget.length() <= 0) {
+            return true;
+        }
+
+        return false;
+    }
 }

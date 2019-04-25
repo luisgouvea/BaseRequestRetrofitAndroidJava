@@ -11,7 +11,7 @@ public class RequestBase {
     private Call<ResponseAPI> call;
     private RequestBaseInterface requestBaseInterface;
 
-    public void executeRequestBase(Call<ResponseAPI> call, final RequestBaseInterface requestBaseInterface) {
+    protected void executeRequestBase(Call<ResponseAPI> call, final RequestBaseInterface requestBaseInterface) {
         this.call = call;
         this.requestBaseInterface = requestBaseInterface;
         addEnqueue();
