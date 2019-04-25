@@ -6,5 +6,5 @@ public class ServicesURL {
 
     public static final String AUTH_USER = "Authentication/Authenticate";
 
-    public static final String CHARGE_ADD = "SingleSale/Add";
+    public static final String SINGLE_SALE_ADD = "SingleSale/Add";
 }

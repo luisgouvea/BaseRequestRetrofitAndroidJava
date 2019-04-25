@@ -1,6 +1,6 @@
 package com.baserequestretrofitandroidjava.baserequestretrofitandroidjava.services.authentication;
 
-import com.baserequestretrofitandroidjava.baserequestretrofitandroidjava.models.AuthenticationRequest;
+import com.baserequestretrofitandroidjava.baserequestretrofitandroidjava.models.authentication.AuthenticationRequest;
 import com.baserequestretrofitandroidjava.baserequestretrofitandroidjava.models.util.ResponseAPI;
 import com.baserequestretrofitandroidjava.baserequestretrofitandroidjava.retrofit.RequestBaseInterface;
 import com.baserequestretrofitandroidjava.baserequestretrofitandroidjava.retrofit.RequestBase;
@@ -26,11 +26,11 @@ public class AuthRequest extends RequestBase implements RequestBaseInterface {
     private void createObject(String password, String email) {
         authenticationRequest = new AuthenticationRequest();
         if (LibraryUtil.stringIsNull(password)) {
-            authenticationRequest.Password = password;
+            authenticationRequest.password = password;
         }
 
         if (LibraryUtil.stringIsNull(email)) {
-            authenticationRequest.Email = email;
+            authenticationRequest.email = email;
         }
     }
 

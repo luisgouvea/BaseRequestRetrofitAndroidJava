@@ -66,4 +66,22 @@ public class LibraryUtil {
 
         return false;
     }
+
+    public static boolean doubleIsNull(double doubleTarget) {
+
+        if (doubleTarget <= 0) {
+            return true;
+        }
+
+        return false;
+    }
+
+    public static boolean intIsNull(int doubleTarget) {
+
+        if (doubleTarget == 0) {
+            return true;
+        }
+
+        return false;
+    }
 }
