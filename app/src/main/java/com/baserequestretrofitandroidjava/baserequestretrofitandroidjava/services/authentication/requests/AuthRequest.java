@@ -31,7 +31,7 @@ public class AuthRequest extends RequestBase implements RequestBaseInterface {
 
     @Override
     public void requestDoInBackground() {
-        AuthMethodsInterface authMethodsInterface = InitialRetrofit.getRetrofit().create(AuthMethodsInterface.class);
+        AuthMethodsInterface authMethodsInterface = InitialRetrofit.getRetrofitAuth().create(AuthMethodsInterface.class);
         Call<ResponseAPI> call = authMethodsInterface.authenticate(authenticationRequest);
         executeRequestBase(call, this);
     }
