@@ -5,8 +5,8 @@ import android.os.Bundle;
 
 import com.baserequestretrofitandroidjava.baserequestretrofitandroidjava.models.AuthenticationRequest;
 import com.baserequestretrofitandroidjava.baserequestretrofitandroidjava.models.util.ResponseAPI;
-import com.baserequestretrofitandroidjava.baserequestretrofitandroidjava.services.authentication.requests.AuthCallback;
-import com.baserequestretrofitandroidjava.baserequestretrofitandroidjava.services.authentication.requests.AuthRequest;
+import com.baserequestretrofitandroidjava.baserequestretrofitandroidjava.services.authentication.AuthCallback;
+import com.baserequestretrofitandroidjava.baserequestretrofitandroidjava.services.authentication.AuthRequest;
 
 public class MainActivity extends AppCompatActivity implements AuthCallback {
 
