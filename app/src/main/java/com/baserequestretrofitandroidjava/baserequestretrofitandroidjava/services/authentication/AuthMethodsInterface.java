@@ -10,7 +10,6 @@ import retrofit2.http.POST;
 
 public interface AuthMethodsInterface {
 
-    //@POST("/api/Usuario/ListAllUsuarioAddAtivVincExecutor")
     @POST(ServicesURL.AUTH_USER)
     Call<ResponseAPI> authenticate(@Body AuthenticationRequest authenticationRequest);
 }
