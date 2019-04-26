@@ -22,6 +22,11 @@ public class MainActivity extends AppCompatActivity implements AuthCallback, Sin
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        requests();
+    }
+
+    public void requests() {
         requestManager = new RequestManager();
         requestListUser();
         requestAddSingleSale();
