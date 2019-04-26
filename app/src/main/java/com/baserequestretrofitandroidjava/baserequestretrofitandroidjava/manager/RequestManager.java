@@ -5,12 +5,12 @@ import com.baserequestretrofitandroidjava.baserequestretrofitandroidjava.service
 import com.baserequestretrofitandroidjava.baserequestretrofitandroidjava.services.singleSale.add.SingleSaleAddCallback;
 import com.baserequestretrofitandroidjava.baserequestretrofitandroidjava.services.singleSale.add.SingleSaleAddRequest;
 
-public class ManagerRequest {
+public class RequestManager {
 
     private AuthRequest authRequest;
     private SingleSaleAddRequest singleSaleAddRequest;
 
-    public ManagerRequest() {
+    public RequestManager() {
     }
 
     public void authRequest(AuthCallback callback, String password, String email) {

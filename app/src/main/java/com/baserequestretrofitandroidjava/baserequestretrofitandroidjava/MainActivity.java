@@ -3,7 +3,7 @@ package com.baserequestretrofitandroidjava.baserequestretrofitandroidjava;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
-import com.baserequestretrofitandroidjava.baserequestretrofitandroidjava.manager.ManagerRequest;
+import com.baserequestretrofitandroidjava.baserequestretrofitandroidjava.manager.RequestManager;
 import com.baserequestretrofitandroidjava.baserequestretrofitandroidjava.models.authentication.AuthenticationRequest;
 import com.baserequestretrofitandroidjava.baserequestretrofitandroidjava.models.singleSale.SingleSale;
 import com.baserequestretrofitandroidjava.baserequestretrofitandroidjava.models.util.ResponseAPI;
@@ -12,7 +12,7 @@ import com.baserequestretrofitandroidjava.baserequestretrofitandroidjava.service
 
 public class MainActivity extends AppCompatActivity implements AuthCallback, SingleSaleAddCallback {
 
-    ManagerRequest managerRequest;
+    RequestManager requestManager;
 
     /* == CALLBACKS == */
     AuthCallback authCallback = this;
@@ -22,17 +22,17 @@ public class MainActivity extends AppCompatActivity implements AuthCallback, Sin
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        managerRequest = new ManagerRequest();
+        requestManager = new RequestManager();
         requestListUser();
         requestAddSingleSale();
     }
 
     public void requestListUser() {
-        managerRequest.authRequest(authCallback, "12345","algumacoisa@ig.com.br");
+        requestManager.authRequest(authCallback, "12345","algumacoisa@ig.com.br");
     }
 
     public void requestAddSingleSale() {
-        managerRequest.addSingleSale(singleSaleAddCallback, 12.44,1);
+        requestManager.addSingleSale(singleSaleAddCallback, 12.44,1);
     }
 
 
